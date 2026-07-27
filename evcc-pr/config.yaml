@@ -1,0 +1,24 @@
+name: "evcc (PR 32187 Test)"
+version: "pr-32187"
+slug: "evcc_pr_test"
+description: "evcc PR #32187 Testbuild"
+arch:
+  - aarch64
+  - amd64
+image: "evcc/evcc"
+url: "https://github.com/evcc-io/evcc/pull/32187"
+startup: application
+boot: manual
+ports:
+  7070/tcp: 7071
+ports_description:
+  7070/tcp: "evcc PR test UI"
+map:
+  - addon_config:rw
+  - config:rw
+options:
+  config_file: /config/evcc-pr-test.yaml
+  sqlite_file: /config/evcc-pr-test.db
+schema:
+  config_file: str
+  sqlite_file: str
